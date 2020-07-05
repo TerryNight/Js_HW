@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>     
+    <script>
+        "use strict"
+        function Value(number) {
+            this.number = number;
+            this.check = function() {
+                if(Number.isInteger(number) == true){
+                    if(number >= 0 && number <= 999){
+                    let units = number%10;
+                    console.log("Единицы: " + units);
+                    let tents = number%100/10;
+                    console.log("Десятки: " + Math.floor(tents));
+                    let hundreds = Math.floor(number/100);
+                    console.log("Сотни: " + hundreds);
+                    } 
+                    else{
+                        console.log("Число не относится к промежутку [0;999]");
+                    }
+                }
+                else{
+                    console.log("Вы ввели нецелое число");
+                }
+            };
+            
+        }
+        let num1 = +prompt("Введите число:");
+        const funct = new Value(num1);
+        funct.check();
+    </script>
+</body>
+</html>
